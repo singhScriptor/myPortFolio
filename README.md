@@ -1,8 +1,7 @@
 # myPortFolio
 # DhirajKr Portfolio
 
-link:-
-https://dhirajkr08.github.io/myPortFolio/
+Check out the live demo of the project [here]()
 
 ## Overview
 
