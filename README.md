@@ -5,12 +5,12 @@ Check out the live demo of the project [here](https://singhscriptor.github.io/my
 
 ## Overview
 
-Welcome to the DhirajKr Portfolio! This project showcases my skills and projects as a Full Stack Developer. It features a responsive design and a contact form that utilizes Axios for sending user data to a mock API. The portfolio highlights my expertise in web development and serves as a platform to connect with potential collaborators.
+Welcome to the DhirajKr Portfolio! This project showcases my skills and projects as a Full Stack Developer. It features a responsive design and a contact form that utilizes Axios for sending user data to a Node.js backend running on localhost. The portfolio highlights my expertise in web development and serves as a platform to connect with potential collaborators.
 
 ## Features
 
 - **Responsive Design**: Optimized for both desktop and mobile devices.
-- **Contact Form**: Users can submit their information, which is sent to a mock API using Axios.
+- **Contact Form**: Users can submit their information, which is sent to a Node.js backend running on localhost using Axios.
 - **Project Showcase**: Displays various projects with descriptions and links to their respective repositories.
 - **Modern UI**: Utilizes Tailwind CSS for a clean and modern aesthetic.
 
@@ -19,8 +19,9 @@ Welcome to the DhirajKr Portfolio! This project showcases my skills and projects
 - **HTML**: Structure of the web pages.
 - **CSS**: Basic styling for the portfolio.
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **JavaScript**: For interactivity and handling form submissions.
+- **JavaScript(ES6+)**: For interactivity and handling form submissions.
 - **Axios**: Promise-based HTTP client for making requests to the API.
+- **Node.js**: Backend logic for handling form submissions and local data persistence.
 - **Font Awesome**: For icons used throughout the portfolio.
 
 ## Getting Started
@@ -43,8 +44,9 @@ To run this project locally, follow these steps:
 ## Usage
 
 - Fill out the contact form with your name, email, subject, and message.
-- Upon submission, the data will be sent to a mock API endpoint using Axios.
-- The response will be logged in the console for verification.
+- Upon submission, the data will be sent via Axios to the Node.js/Express backend.
+- The backend saves the data locally in `contacts.txt` for verification.
+
 
 ## License
 
