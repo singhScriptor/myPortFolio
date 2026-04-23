@@ -1,5 +1,25 @@
 {
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "description": "Check out the live demo of the project [here](https://singhscriptor.github.io/myPortFolio/)",
+  "scripts": {
+    "start": "node server.js",
+    "build": "tailwindcss -i ./src/input.css -o ./public/dist/output.css --watch"
+  },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhScriptor/myPortFolio.git"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/singhScriptor/myPortFolio#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
   }
 }
