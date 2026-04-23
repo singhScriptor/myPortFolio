@@ -9,7 +9,7 @@ app.use(cors());
 
 
 const path = require('path');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 
 // Route to handle contact form submissions
 app.post('/contact', (req, res) => {
