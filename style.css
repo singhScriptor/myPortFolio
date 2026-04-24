@@ -976,27 +976,29 @@ footer {
     }
     /* Strictly for the 3 Project Boxes on Mobile */
     .layer {
-        padding: 10px 15px !important; /* Gives the text more breathing room */
+        padding: 8px 12px !important; /* Gives the text more breathing room */
+        justify-content: center !important;
     }
     
     .layer h5 {
-        font-size: 16px !important; /* Shrink project title */
-        margin-bottom: 5px !important;
+        font-size: 13px !important; /* Shrink project title */
+        margin-bottom: 3px !important;
+        font-weight: 700 !important;
     }
     
     .layer p {
-        font-size: 11px !important; /* Shrink description so it fits naturally */
-        line-height: 1.3 !important;
-        margin-bottom: 8px !important;
+        font-size: 10px !important; /* Shrink description so it fits naturally */
+        line-height: 1.2 !important;
+        margin-bottom: 5px !important;
     }
     
     .layer i {
-        font-size: 18px !important; /* Shrink the GitHub/Link icons */
+        font-size: 16px !important; /* Shrink the GitHub/Link icons */
     }
     
     .layer > div {
-        margin-top: 5px !important;
-        gap: 15px !important; /* Brings the icons slightly closer together */
+        margin-top: 2px !important;
+        gap: 12px !important; /* Brings the icons slightly closer together */
     }
     /* Move skill percentages below the progress bar on mobile */
     .progress-line span::after {
@@ -1008,6 +1010,17 @@ footer {
     /* Give each skill a little extra bottom margin so the new percentage position doesn't hit the next skill */
     .bar {
         margin-bottom: 35px !important; 
+    }
+    /* Footer Adjustment for Small Screens */
+    footer {
+        padding: 15px 10px !important; /* Slightly tighter padding */
+    }
+
+    .footer-typed {
+        font-size: 11px !important;   /* Smaller font to fit more characters */
+        white-space: normal !important; /* ALLOWS text to wrap if it's too long */
+        text-align: center !important;  /* Keeps it centered if it wraps to 2 lines */
+        line-height: 1.4 !important;
     }
 }
 
