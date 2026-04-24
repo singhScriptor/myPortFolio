@@ -6,6 +6,11 @@
     scroll-behavior: smooth;
     font-family: 'Poppins' , sans-serif;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* This stops the horizontal "shaking" instantly */
+    position: relative;
+}
 body{
     color: #ededed;
     background: #04041a;
@@ -1041,6 +1046,23 @@ footer {
         white-space: normal !important; /* ALLOWS text to wrap if it's too long */
         text-align: center !important;  /* Keeps it centered if it wraps to 2 lines */
         line-height: 1.4 !important;
+    }
+    /* latest update in footer for stabilitity in small screen */
+    footer {
+        width: 100%;
+        padding: 20px 10px !important;
+        overflow: hidden; /* Keeps everything inside the footer box */
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-typed {
+        font-size: 12px !important;   /* Smaller for small screens */
+        white-space: normal !important; /* CRITICAL: Allows text to wrap */
+        text-align: center !important;  /* Centers the wrapped text */
+        display: block !important;
+        width: 90%;                   /* Keeps text away from the very edges */
+        margin: 0 auto;
     }
 }
 
