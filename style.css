@@ -533,6 +533,7 @@ section {
     text-align: center;
     padding: 0 40px;
     transition: height 0.5s;
+    
 }
 
 .layer h5 {
@@ -576,6 +577,19 @@ section {
 }
 .row:hover .layer{
     height: 100%;
+}
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.5s; /* Smooth glow transition */
+}
+
+/* This creates the "Neon Glow" effect when you hover over a project */
+.row:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 0 20px #0ef;   /* Cyan glow that matches your theme */
 }
 
 .contact{
