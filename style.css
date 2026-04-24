@@ -717,12 +717,12 @@ section {
 
 footer {
     display: flex;
-    justify-content: center; /* Horizontally centers the text */
-    align-items: center;     /* Vertically centers the text */
-    padding: 20px 0;         /* Equal padding top and bottom */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
     background: #081529;
     width: 100%;
-    overflow: hidden;        /* Prevents any scrollbars if the text is long */
+    overflow: hidden;
 }
 
 .footer-text {
@@ -733,11 +733,11 @@ footer {
 }
 
 .footer-typed {
-    font-size: 15px; /* Professional size */
-    color: #0ef;     /* Your cyan vibe */
+    font-size: 15px;
+    color: white; 
     font-weight: 500;
-    white-space: nowrap; /* FORCES everything to stay on one line */
     letter-spacing: 0.5px;
+    margin: 0;
 }
 
 /* Back to Top - Keep this separate so it doesn't push the text */
@@ -1039,30 +1039,14 @@ footer {
     /* Footer Adjustment for Small Screens */
     footer {
         padding: 15px 10px !important; /* Slightly tighter padding */
-    }
-
-    .footer-typed {
-        font-size: 11px !important;   /* Smaller font to fit more characters */
-        white-space: normal !important; /* ALLOWS text to wrap if it's too long */
-        text-align: center !important;  /* Keeps it centered if it wraps to 2 lines */
-        line-height: 1.4 !important;
-    }
-    /* latest update in footer for stabilitity in small screen */
-    footer {
         width: 100%;
-        padding: 20px 10px !important;
-        overflow: hidden; /* Keeps everything inside the footer box */
-        display: flex;
-        justify-content: center;
     }
-
     .footer-typed {
-        font-size: 12px !important;   /* Smaller for small screens */
-        white-space: normal !important; /* CRITICAL: Allows text to wrap */
-        text-align: center !important;  /* Centers the wrapped text */
-        display: block !important;
-        width: 90%;                   /* Keeps text away from the very edges */
-        margin: 0 auto;
+        font-size: 13px !important;   /* Slightly smaller to fit */
+        white-space: normal !important; /* Forces text to wrap so it doesn't push the screen wide */
+        text-align: center !important;
+        width: 100%;
+        line-height: 1.4;
     }
 }
 

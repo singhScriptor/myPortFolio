@@ -7,20 +7,20 @@ var typed = new Typed(".text", {
 })
 
 
-//for footer
-var typedFooter = new Typed(".footer-typed", {
-    strings: [
-        "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Open for Collaboration . . .",
-        "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Available for Opportunity . . .",
-        "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Let's build something together!"
-    ],
-    typeSpeed: 70,
-    backSpeed: 50,
-    smartBackspace: true, 
-    backDelay: 1500,
-    loop: true,
-    contentType: 'html' // DO NOT FORGET THIS: It makes the colors work!
-});
+// //for footer
+// var typedFooter = new Typed(".footer-typed", {
+//     strings: [
+//         "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Open for Collaboration . . .",
+//         "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Available for Opportunity . . .",
+//         "<span class='f-white'>&copy; 2026 Dhiraj Kumar |</span> Let's build something together!"
+//     ],
+//     typeSpeed: 70,
+//     backSpeed: 50,
+//     smartBackspace: true, 
+//     backDelay: 1500,
+//     loop: true,
+//     contentType: 'html' // DO NOT FORGET THIS: It makes the colors work!
+// });
 
 async function handleContactSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
