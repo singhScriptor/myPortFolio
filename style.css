@@ -250,60 +250,69 @@ body{
     transform: translateY(-10px);
 }
 
-section{
+section {
     display: flex;
     flex-wrap: wrap;
 }
-.container1{
+.container1 {
     width: 600px;
     height: 800px;
     padding: 75px;
     margin-left: 120px;
 }
-.heading1{
+.heading1 {
     text-align: center;
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
     margin-bottom: 20px;
 }
-.bar{
+
+/* --- Icon and Name on one line --- */
+.Technical-bars .bar {
+    margin-top: 35px;
     font-size: 23px;
+    display: flex;       /* Added: makes internal items alignable */
+    flex-wrap: wrap;     /* Added: allows the bar to drop to the next line */
+    align-items: center; /* Added: centers logo and name vertically */
 }
-.Technical-bars .bar{
-    margin-top: 40px 0;
+
+.Technical-bars .bar i {
+    width: 35px;
+    text-align: center;
+    font-size: 23px;
+    margin-right: 10px;  /* Added: space between logo and name */
 }
-.Technical-bars .bar:first-child{
+
+.Technical-bars .bar:first-child {
     margin-top: 0;
 }
-.Technical-bars .bar:last-child{
-    margin-bottom: 0;
+
+.Technical-bars .bar .info {
+    margin-bottom: 0;    /* Changed: 0 keeps it level with the logo */
 }
-.Technical-bars .bar .info{
-    margin-bottom: 5px;
-}
-.Technical-bars .bar .info span{
+
+.Technical-bars .bar .info span {
     font-size: 17px;
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
-.Technical-bars .bar .progress-line{
+
+/* --- Progress Line (Forces to next line) --- */
+.Technical-bars .bar .progress-line {
     position: relative;
     border-radius: 10px;
-    width: 100%;
+    width: 100%;         /* Ensures the bar stays below and full width */
     height: 5px;
     background-color: #000000;
+    margin-top: 10px;    /* Space between the Name and the Bar */
     animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
     transform: scaleX(0);
     transform-origin: left;
 }
-@keyframes animate{
-    100%{
-        transform: scaleX(1);
-    }
-}
-.Technical-bars .bar .progress-line span{
+
+.Technical-bars .bar .progress-line span {
     height: 100%;
     background-color: #0ef;
     position: absolute;
@@ -313,31 +322,49 @@ section{
     transform-origin: left;
 }
 
-.progress-line.javascript span{
-    width: 85%;
+/* --- Progress Line Animations --- */
+.Technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
 }
-.progress-line.python span{
-    width: 85%;
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
 }
-.progress-line.github span{
-    width: 70%;
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
 }
-.progress-line.html span{
-    width: 85%;
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
 }
-.progress-line.css span{
-    width: 75%;
-}
-.progress-line.bootstrap span{
-    width: 75%;
-}
-.progress-line.tailwind span{
-    width: 65%;
-}
-.progress-line.api span{
-    width: 85%;
-}
-.progress-line span::after{
+
+/* --- Updated Skill Widths --- */
+.progress-line.javascript span { width: 85%; }
+.progress-line.html span       { width: 90%; }  /* HTML & CSS */
+.progress-line.tailwind span   { width: 80%; }  /* Tailwind & Bootstrap */
+.progress-line.api span        { width: 85%; }
+.progress-line.node span       { width: 65%; }  /* Node & Express */
+.progress-line.dsa span        { width: 75%; }
+.progress-line.python span     { width: 80%; }
+.progress-line.github span     { width: 75%; }
+
+/* --- Tooltip Box (Text) --- */
+.progress-line span::after {
     position: absolute;
     padding: 1px 8px;
     background-color: #000;
@@ -345,37 +372,13 @@ section{
     font-size: 12px;
     border-radius: 3px;
     top: -28px;
-    right: -28px;
+    right: -15px; /* Centers the box nicely */
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
 
-.progress-line.javascript span::after{
-    content: "85%";
-}
-.progress-line.python span::after{
-    content: "85%";
-}
-
-.progress-line.github span::after{
-    content: "70%";
-}
-.progress-line.html span::after{
-    content: "85%";
-}
-.progress-line.css span::after{
-    content: "75%";
-}
-.progress-line.bootstrap span::after{
-    content: "75%";
-}
-.progress-line.tailwind span::after{
-    content: "65%";
-}
-.progress-line.api span::after{
-    content: "85%";
-}
-.progress-line span::after{
+/* --- Tooltip Triangle Pointer --- */
+.progress-line span::before {
     content: "";
     position: absolute;
     width: 0;
@@ -385,31 +388,36 @@ section{
     border-right-width: 0px;
     border-top-color: #000;
     top: -10px;
-    /* right: 0; */
+    right: 0;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
-@keyframes showText{
-    100%{
-        opacity: 1;
-    }
-}
 
+/* --- Tooltip Percentage Values --- */
+.progress-line.javascript span::after { content: "85%"; }
+.progress-line.html span::after       { content: "90%"; }
+.progress-line.tailwind span::after   { content: "80%"; }
+.progress-line.api span::after        { content: "85%"; }
+.progress-line.node span::after       { content: "65%"; }
+.progress-line.dsa span::after        { content: "75%"; }
+.progress-line.python span::after     { content: "80%"; }
+.progress-line.github span::after     { content: "75%"; }
 
-.radial-bars{
+/* --- Radial Bars (Professional Skills) --- */
+.radial-bars {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
 }
-.radial-bars .radial-bar{
+.radial-bars .radial-bar {
     width: 50%;
     height: 170px;
     margin-bottom: 10px;
     position: relative;
 }
-.radial-bars .radial-bar svg{
+.radial-bars .radial-bar svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -417,7 +425,7 @@ section{
     width: 120px;
     height: 160px;
 }
-.radial-bars .radial-bar .progress-bar{
+.radial-bars .radial-bar .progress-bar {
     stroke-width: 10;
     stop-color: black;
     fill: transparent;
@@ -426,12 +434,12 @@ section{
     stroke-linecap: round;
     animation: animate-bar 1s linear forwards;
 }
-@keyframes animate-bar{
-    100%{
+@keyframes animate-bar {
+    100% {
         stroke-dashoffset: -1;
     }
 }
-.path{
+.path {
     stroke-width: 10;
     stroke: #0ef;
     fill: transparent;
@@ -439,32 +447,19 @@ section{
     stroke-dashoffset: 502;
     stroke-linecap: round;
 }
-.path-1{animation: animate-path1 1s 1s linear forwards}
-.path-2{animation: animate-path2 1s 1s linear forwards}
-.path-3{animation: animate-path3 1s 1s linear forwards}
-.path-4{animation: animate-path4 1s 1s linear forwards}
 
-@keyframes animate-path1{
-    100%{
-        stroke-dashoffset: 45%;
-    }
-}
-@keyframes animate-path2{
-    100%{
-        stroke-dashoffset: 20%;
-    }
-}
-@keyframes animate-path3{
-    100%{
-        stroke-dashoffset: 60%;
-    }
-}
-@keyframes animate-path4{
-    100%{
-        stroke-dashoffset: 30%;
-    }
-}
-.radial-bar .percentage{
+/* Radial Path Animations */
+.path-1 { animation: animate-path1 1s 1s linear forwards; }
+.path-2 { animation: animate-path2 1s 1s linear forwards; }
+.path-3 { animation: animate-path3 1s 1s linear forwards; }
+.path-4 { animation: animate-path4 1s 1s linear forwards; }
+
+@keyframes animate-path1 { 100% { stroke-dashoffset: 50; } }  /* 90% */
+@keyframes animate-path2 { 100% { stroke-dashoffset: 75; } }  /* 85% */
+@keyframes animate-path3 { 100% { stroke-dashoffset: 100; } } /* 80% */
+@keyframes animate-path4 { 100% { stroke-dashoffset: 75; } }  /* 85% */
+
+.radial-bar .percentage {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -474,16 +469,16 @@ section{
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
-.radial-bar .text{
+.radial-bar .text, .radial-bar .test {
     width: 100%;
     position: absolute;
     text-align: center;
     left: 50%;
     bottom: -5px;
-    transform: translateX(-50px);
+    transform: translateX(-50%); /* Fixed: -50% instead of -50px for proper centering */
     font-size: 17px;
     font-weight: 500;
-    animation: shoeText 0.5s 1s linear forwards;
+    animation: showText 0.5s 1s linear forwards; /* Fixed: 'showText' */
     opacity: 0;
 }
 
@@ -540,21 +535,21 @@ section{
     transition: height 0.5s;
 }
 .layer h5{
-    color: #000;
+    color: white;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 .layer p{
-    color: #000;
+    color: white;
     font-size: 1rem;
     line-height: 1.8;
 }
 .layer i{
-    color: #ff004f;
+    color: white;
     margin-top: 20px;
-    font-size: 20px;
-    background-color: #fff;
+    font-size: 30px;
+    
     width: 60px;
     height: 60px;
     display: flex;
@@ -681,25 +676,55 @@ section{
 }
 
 
-.last-text p{
-    width: 100%;
-    text-align: center;
-    padding: 25px 0;
-    background: rgb(19, 1, 19);
-    font-size: 300;
-    margin-top: 70px;
+.f-white {
+    color: #ffffff !important; /* Forces the name to be white */
+    font-weight: 400;
 }
-.top{
+
+footer {
+    display: flex;
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center;     /* Vertically centers the text */
+    padding: 20px 0;         /* Equal padding top and bottom */
+    background: #081529;
+    width: 100%;
+    overflow: hidden;        /* Prevents any scrollbars if the text is long */
+}
+
+.footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-typed {
+    font-size: 15px; /* Professional size */
+    color: #0ef;     /* Your cyan vibe */
+    font-weight: 500;
+    white-space: nowrap; /* FORCES everything to stay on one line */
+    letter-spacing: 0.5px;
+}
+
+/* Back to Top - Keep this separate so it doesn't push the text */
+.top {
     position: fixed;
     bottom: 2.1rem;
     right: 2.1rem;
+    z-index: 100;
 }
-.top i{
+
+.top i {
     color: #000;
     background: #0ef;
     font-size: 20px;
     padding: 10px 13px;
     border-radius: 0.5rem;
+    transition: 0.4s;
+}
+
+.top i:hover {
+    box-shadow: 0 0 1rem #0ef;
 }
 
 
@@ -743,6 +768,8 @@ section{
         opacity: 1;
     }
 }
+
+
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
