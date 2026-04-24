@@ -517,7 +517,7 @@ section {
     display: block;
     transition: transform 0.5s;
 }
-.layer{
+.layer {
     width: 100%;
     height: 0;
     background: linear-gradient(rgba(0,0,0,0.1),#0ef);
@@ -534,28 +534,42 @@ section {
     padding: 0 40px;
     transition: height 0.5s;
 }
-.layer h5{
+
+.layer h5 {
     color: white;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.layer p{
+
+.layer p {
     color: white;
     font-size: 1rem;
     line-height: 1.8;
 }
-.layer i{
-    color: white;
-    margin-top: 20px;
-    font-size: 30px;
-    
-    width: 60px;
-    height: 60px;
+
+/* 1. Makes the div holding your icons a perfect Flexbox */
+.layer > div {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    align-items: center;
+    width: 100%;
+    gap: 20px; /* Space between the GitHub and Demo icons */
+    margin-top: 15px;
+}
+
+/* 2. Strips away the invisible boxes so they act like normal icons */
+.layer i {
+    color: white;
+    font-size: 25px; /* Perfect, clean size */
+    margin: 0; /* We let the Flexbox handle the spacing now */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: Adds a cool hover effect to the icons */
+.layer i:hover {
+    color: #081b29; /* Turns dark blue to contrast with the cyan background */
+    transform: scale(1.2); /* Slightly enlarges when hovered */
 }
 .row:hover img{
     transform: scale(1.1);
@@ -908,7 +922,7 @@ footer {
         margin-bottom: 60px; /* Added margin at the bottom to prevent merging with .top section */
         position: relative; /* Ensure it respects the z-index */
         z-index: 0; /* Ensure it stays below the radial-bars */
-        margin-top: 520px;
+        margin-top: 50px;
     }
     .main-text h2 {
         font-size: 36px;
@@ -959,6 +973,41 @@ footer {
     .top i {
         font-size: 16px;
         padding: 8px 10px;
+    }
+    /* Strictly for the 3 Project Boxes on Mobile */
+    .layer {
+        padding: 10px 15px !important; /* Gives the text more breathing room */
+    }
+    
+    .layer h5 {
+        font-size: 16px !important; /* Shrink project title */
+        margin-bottom: 5px !important;
+    }
+    
+    .layer p {
+        font-size: 11px !important; /* Shrink description so it fits naturally */
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .layer i {
+        font-size: 18px !important; /* Shrink the GitHub/Link icons */
+    }
+    
+    .layer > div {
+        margin-top: 5px !important;
+        gap: 15px !important; /* Brings the icons slightly closer together */
+    }
+    /* Move skill percentages below the progress bar on mobile */
+    .progress-line span::after {
+        top: 100% !important;       /* Pushes the number below the bar instead of above */
+        margin-top: 5px !important; /* Adds a tiny gap so it doesn't touch the line */
+        right: 0 !important;        /* Keeps it aligned to the right side */
+    }
+    
+    /* Give each skill a little extra bottom margin so the new percentage position doesn't hit the next skill */
+    .bar {
+        margin-bottom: 35px !important; 
     }
 }
 
